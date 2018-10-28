@@ -23,3 +23,8 @@ Route::get('welcome', function () {
 Route::get('say/{name?}', ['as'=>'hello.index', function ($name='Everybody') {
     return view('welcome');
 }]);
+Route::group(['prefix'=>'admin'], function () {
+    Route::get('dashboard', function () {
+        return 'dashboard';
+    });
+});
